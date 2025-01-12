@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{ base:: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head>
+    <title>About</title>
+</head>
+
+<body>
+    <div id="content" class="pt-20 px-20">
+        <section class="bg-blue-600 text-white py-20 animate__animated animate__fadeInDown">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-6">About This Site</h1>
+                <p class="text-lg mb-8">Welcome to the Smart Contact Manager, your ultimate tool for efficiently managing and organizing your contacts. Streamline communication and stay organized in today’s fast-paced world.</p>
+                <p class="text-lg">Our mission is to simplify your contact management experience, enabling you to build meaningful relationships effortlessly.</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 bg-white dark:bg-gray-800 dark:text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 animate__animated animate__fadeInUp">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-blue-500">&#128736;</span>
+                        <h3 class="text-xl font-semibold mt-4">Contact Organization</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Store, categorize, and manage your contacts intuitively.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-green-500">&#128269;</span>
+                        <h3 class="text-xl font-semibold mt-4">Efficient Search</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Quickly find contacts with powerful search and filtering options.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-purple-500">&#128197;</span>
+                        <h3 class="text-xl font-semibold mt-4">User-Friendly Interface</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Enjoy a seamless and intuitive design tailored for ease of use.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-yellow-500">&#128247;</span>
+                        <h3 class="text-xl font-semibold mt-4">Image Upload</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Attach profile images for easy visual identification.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-red-500">&#128274;</span>
+                        <h3 class="text-xl font-semibold mt-4">Secure Data</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Your data is securely stored to ensure privacy and peace of mind.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded dark:bg-gray-700 shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <span class="text-2xl font-bold text-pink-500">&#128241;</span>
+                        <h3 class="text-xl font-semibold mt-4">Responsive Design</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">Access from any device, whether a computer, tablet, or smartphone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Section -->
+        <section class="bg-blue-600 text-white py-20 animate__animated animate__fadeInUp">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Meet the Developer</h2>
+                <div class="flex justify-center mt-8">
+                    <div
+                        class="max-w-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 shadow-lg rounded-lg overflow-hidden">
+                        <img src="https://res.cloudinary.com/dbhiggobn/image/upload/c_fill,h_500,w_500/3cfb10fa-2f33-4e2b-9ef4-6bf713427886?_a=DAGAACAXZAA0" alt="profilePic" class="w-40 h-40 object-cover rounded-full mx-auto mt-6">
+                        <div class="p-6 text-center">
+                          <h3 class="text-2xl font-bold">Akshay Bavaliya</h3>
+                          <p class="text-sm italic mb-4">Developer</p>
+                          <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci atque modi fugit voluptatum porro quod ex doloribus assumenda iusto aut?</p>
+                          <p class="text-base mt-2">akshaybavaliya007@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 Contact Manager. All rights reserved.</p>
+                <p>Follow me on <a href="#" class="text-blue-400">Facebook</a>, <a href="#"
+                        class="text-blue-400">Twitter</a>, and <a href="#" class="text-blue-400">Instagram</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script></script>
+</body>
+
+</html>

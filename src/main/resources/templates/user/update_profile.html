@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{ base:: parent(~{::#content}, ~{::title}, ~{::script})}" >
+<head>
+    <title>Update Contact</title>
+</head>
+<body>
+    <div id="content">
+
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+
+        <div class="md:pt-20 px-72">
+            <div class="grid grid-cols-12">
+                <div class="col-span-3"></div>
+                <div class="col-span-12 md:col-span-6">
+                    <div class="card block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <h1 class="text-2xl font-semibold">Update Profile</h1>
+                        <form 
+                            th:action="@{'/user/profile/edit'}" method="post" 
+                            th:object="${profileEditForm}" class="mt-8" enctype="multipart/form-data">
+                            <!-- name field -->
+                            <div class="max-w-sm mb-3">
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                      <i class="fa-regular fa-user h-4 w-4"></i>
+                                    </div>
+                                    <input 
+                                        th:field="*{name}"
+                                        type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name"
+                                    >
+                                </div>
+                                <p 
+                                    th:if="${#fields.hasErrors('name')}"
+                                    th:errors="*{name}"
+                                    class="text-red-600 pt-2 px-1">
+                                </p>
+                            </div>
+                            <!-- phone field -->
+                            <div class="max-w-sm mb-3">
+                                <label for="phoneNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                        <i class="fa-solid fa-phone h-4 w-4"></i>
+                                    </div>
+                                    <input 
+                                        th:field="*{phoneNumber}"
+                                        type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g. 9876543210"
+                                    >
+                                </div>
+                                <p 
+                                   th:if="${#fields.hasErrors('phoneNumber')}"
+                                   th:text="${#fields.errors('phoneNumber')[0]}"
+                                   class="text-red-600 pt-2 px-1">
+                                </p>
+                            </div>
+                            <!-- address field -->
+                            <div class="max-w-sm mb-3">
+                                <label for="input-group-4" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                                <textarea
+                                    th:field="*{address}"
+                                    rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your address ..."></textarea>
+                            </div>
+                            <!-- About field -->
+                            <div class="max-w-sm mb-3">
+                                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                                <textarea 
+                                    th:field="*{about}" 
+                                    rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write something about you ..."></textarea>
+                            </div>
+                            <!-- profile image field -->
+                            <div class="mb-3">
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Image</label>
+                                <input 
+                                    id="upload_image_input"
+                                    th:field="*{profileImage}"
+                                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file">
+
+                                <img class="max-h-52 mx-auto rounded-lg my-2 shadow" src="" id="upload_image_preview" alt="">
+                            </div>
+                            <!-- submit & reset button -->
+                            <div class="button-container text-center space-x-3">
+                                <button type="submit" class="py-2 px-3 rounded text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm w-full sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Update profile
+                                </button>
+                                <button type="reset" class="py-2 px-6 rounded text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm w-full sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{'/js/add_contact.js'}"></script>
+</body>
+</html>

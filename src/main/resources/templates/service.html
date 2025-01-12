@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}">
+  <head>
+    <title>Services</title>
+  </head>
+  <body>
+    <section id="content" class="pt-20 px-20">
+      <main class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-center mb-12 text-indigo-800 dark:text-white">Our Services</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.1s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zM6 21v-2a4 4 0 00-4-4H2a4 4 0 014 4v2zm8-10h.01M5 13h14" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">Contact Management</h2>
+                <p class="text-gray-600 dark:text-gray-300">Easily organize and manage your contacts. Add, update, delete, and search for contacts with a seamless and user-friendly interface.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.2s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11v2m0 4h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">User Authentication & Security</h2>
+                <p class="text-gray-600 dark:text-gray-300">Ensure the safety of your account with robust authentication, including account verification, password protection, and secure login/logout mechanisms.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.3s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">Email Integration</h2>
+                <p class="text-gray-600 dark:text-gray-300">Simplify communication with integrated email functionality. Send important updates or messages directly from the platform.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.4s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">Contact Search & Filters</h2>
+                <p class="text-gray-600 dark:text-gray-300">Quickly find the contact you need with advanced search and filtering options. Save time and stay productive.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.5s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M10 14h4" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">Data Backup & Restore</h2>
+                <p class="text-gray-600 dark:text-gray-300">Keep your contact information secure with automatic data backups. Easily restore contacts in case of data loss.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 animate-fade-in" style="animation-delay: 0.6s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-800 dark:text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6M3 21h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-2">Dashboard & Analytics</h2>
+                <p class="text-gray-600 dark:text-gray-300">Gain insights into your contacts and their usage patterns with a powerful dashboard. Analyze and optimize your contact management practices.</p>
+            </div>
+        </div>
+      </main>
+
+      <footer class="bg-white dark:bg-gray-800 mt-12">
+        <div class="container mx-auto px-6 py-4">
+          <p class="text-center text-gray-600 dark:text-gray-400">&copy; All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script></script>
+    </section>
+  </body>
+</html>

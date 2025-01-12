@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{ base:: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head>
+    <title>Dashboard page</title>
+</head>
+
+<body>
+    <div id="content" class="pt-24 sm:pl-72 sm:pr-10">
+
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+
+        <!-- Total Contacts Card - Centered -->
+        <div class="flex justify-center mb-10">
+            <div class="bg-white shadow-md rounded-lg py-5 px-32 text-center dark:bg-gray-800">
+                <h3 class="text-lg font-semibold text-gray-700 dark:text-white">Total Contacts</h3>
+                <p th:text="${totalContacts}" class="text-2xl font-bold text-blue-500">
+                    <!-- total contacts count -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Recent Contacts Section -->
+        <div class="mb-10">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Recent Contacts</h2>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Make the table scrollable on smaller screens -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left dark:bg-gray-800">
+                        <thead class="dark:bg-gray-800">
+                            <tr>
+                                <th class="py-3 px-4 text-gray-700 font-medium dark:text-white">Name</th>
+                                <th class="py-3 px-4 text-gray-700 font-medium dark:text-white">Email</th>
+                                <th class="py-3 px-4 text-gray-700 font-medium dark:text-white">Phone</th>
+                                <th class="py-3 px-4 text-gray-700 font-medium dark:text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="contact : ${recentContacts.content}" class="border-t">
+                                <td scope="row"
+                                    class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-10 h-10 rounded-full" th:src="${contact.picture}"
+                                        onerror="this.src='https://static-00.iconduck.com/assets.00/profile-default-icon-1024x1023-4u5mrj2v.png'">
+                                    <div class="ps-3">
+                                        <div th:text="${contact.name}" class="text-base font-semibold"></div>
+                                    </div>
+
+                                    <i th:if="${contact.favorite}"
+                                        class="fa-solid fa-star transition-all pl-16 duration-200">
+                                    </i>
+                                </td>
+                                <td th:text="${contact.email}" class="py-3 px-4">
+                                    <!-- contact email -->
+                                </td>
+                                <td th:text="${contact.phoneNumber}" class="py-3 px-4">
+                                    <!-- contact phone -->
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button th:onclick="loadContactData([[${contact.id}]])" class="text-blue-500 hover:underline">View</button>
+                                    <a th:href="@{'/user/contacts/view/'+${contact.id}}" class="text-green-500 hover:underline mx-2">Edit</a>
+                                    <button th:onclick="openDeleteAlertModal([[${contact.id}]])" class="text-red-500 hover:underline">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div class="mb-10">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Quick Actions</h2>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a th:href="@{'/user/contacts/add'}" class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 w-full sm:w-auto">
+                    Add Contact
+                </a>
+                <a th:href="@{'/user/contacts'}" class="bg-green-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-600 w-full sm:w-auto">
+                    Export Contacts
+                </a>
+            </div>
+        </div>
+        <div th:replace="~{user/contactView_modal :: contact_modal}"></div>
+        <div th:replace="~{user/delete_alert :: delete_alert}"></div>
+    </div>
+
+    <script data-th-src="@{'/js/contacts.js'}"></script>
+</body>
+
+</html>
