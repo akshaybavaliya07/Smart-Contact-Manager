@@ -1,34 +1,32 @@
-node_modules
-HELP.md
+# Build artifacts
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+build/
+.mvn/
+*.jar
+*.war
+*.ear
 
-### STS ###
-.apt_generated
+# IDE-specific files
+.idea/
+.settings/
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
 *.iml
 *.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+*.iws
 .vscode/
+
+# Log files
+*.log
+*.out
+
+# Configuration files
+application.properties
+application.yml
+
+# Other files
+*.class
+*.swp
+*.bak
+Thumbs.db
+*.DS_Store

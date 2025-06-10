@@ -1,5 +1,5 @@
 // const baseURL = "http://localhost:8080"
-const baseURL = "smartcontactapp.ap-south-1.elasticbeanstalk.com"
+const baseURL = "smartcontactmanagerapp.ap-south-1.elasticbeanstalk.com"
 
 // options with default values
 const options = {

@@ -1,5 +1,5 @@
 //const baseURL = "http://localhost:8080"
-const baseURL = "smartcontactapp.ap-south-1.elasticbeanstalk.com"
+const baseURL = "smartcontactmanagerapp.ap-south-1.elasticbeanstalk.com"
 
 // Get elements
 const sendOtpButton = document.getElementById('sendOtpButton');
